@@ -282,6 +282,7 @@ final class HIDEventManager {
         dismissMenuBarTooltip()
 
         if activeMenuBarDisplayDidChange(rateLimited: false) {
+            appState.menuBarManager.synchronizeAlwaysShowHiddenItems()
             appState.menuBarManager.updateControlItemStates()
         }
     }
@@ -454,6 +455,7 @@ final class HIDEventManager {
             }
 
             if activeMenuBarDisplayDidChange(rateLimited: true) {
+                appState.menuBarManager.synchronizeAlwaysShowHiddenItems()
                 appState.menuBarManager.updateControlItemStates(for: screen)
             }
 
